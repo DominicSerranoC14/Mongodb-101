@@ -1,0 +1,23 @@
+{
+  "name": "Mongodb-101",
+  "version": "1.0.0",
+  "description": "An introductory exercise for Mongodb",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DominicSerranoC14/Mongodb-101.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DominicSerranoC14/Mongodb-101/issues"
+  },
+  "homepage": "https://github.com/DominicSerranoC14/Mongodb-101#readme",
+  "dependencies": {
+    "mongodb": "^2.2.9"
+  }
+}
