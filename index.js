@@ -14,7 +14,7 @@ const incorrectUsage = () => {
   process.exit();
 }
 
-arg.length === 1 ? false: incorrectUsage();
+// arg.length === 1 ? false: incorrectUsage();
 /////////////////////////////////////////
 
 
@@ -26,13 +26,15 @@ MongoClient
   //Log the DB connection
   // console.log("Test db", db);
   //Reading data. Need to convert to an array, .find() is an async action
-  db.collection('restaurants').find({name: RegExp(arg)}, {name: true, borough: true})
+  db.collection('restaurants')
+    .find({name: RegExp(`${arg.join(' ')}`, 'i')}, {name: true, borough: true})
+    .sort({name: 1})
     .toArray()
     .then((restaurants) => {
       restaurants.forEach(restaurant => {
 
         //Log each restaurants name, as long as the name exists
-        restaurant.name ? console.log(restaurant): false;
+        restaurant.name ? console.log(restaurant.name, ' | ' ,restaurant.borough): false;
 
       });
     })
@@ -41,3 +43,4 @@ MongoClient
     //Catch errors
     .catch(console.error);
 });
+/////////////////////////////////////////
